@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angela Mae Enriquez | Personal Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #fdf6f8;
+      color: #4a4a4a;
+      line-height: 1.6;
+    }
+
+    /* Header / Hero Banner */
+    header {
+      background: linear-gradient(135deg, #9d4e73 0%, #c97299 50%, #e5a3c3 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    header h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    header .subtitle {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+      opacity: 0.95;
+    }
+
+    header .welcome {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    /* Sticky Navigation Bar */
+    nav {
+      background-color: #773353;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 14px 10px;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease, opacity 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #f7c6dc;
+    }
+
+    /* Main Container */
+    main {
+      max-width: 720px;
+      margin: 30px auto;
+      padding: 0 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    /* Section Cards */
+    section.card {
+      background-color: #ffffff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 14px rgba(119, 51, 83, 0.08);
+      scroll-margin-top: 65px;
+    }
+
+    section.card h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #773353;
+      font-size: 1.65rem;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      border-bottom: 2px solid #f4a4c4;
+    }
+
+    section.card p {
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+      color: #444444;
+    }
+
+    /* Info Boxes inside Personal Information */
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .info-box {
+      background-color: #fdf0f5;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+
+    .info-box .label {
+      display: block;
+      font-weight: 700;
+      color: #773353;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .info-box .value {
+      color: #333333;
+      font-size: 0.96rem;
+    }
+
+    .info-box a {
+      color: #8b3a60;
+      text-decoration: underline;
+      word-break: break-all;
+    }
+
+    /* Educational Background Details */
+    .edu-school {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #3d3d3d;
+      margin-bottom: 8px;
+    }
+
+    .edu-course {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #4a4a4a;
+      margin-bottom: 8px;
+    }
+
+    .edu-year {
+      font-size: 0.96rem;
+      margin-bottom: 14px;
+    }
+
+    /* Skills Pills */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+
+    .skill-pill {
+      background-color: #fdf0f5;
+      color: #773353;
+      border: 1px solid #f4d6e3;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 0.93rem;
+      font-weight: 500;
+    }
+
+    .muted-note {
+      font-size: 0.88rem;
+      color: #777777;
+      margin-bottom: 0;
+    }
+
+    /* Java Code Block */
+    .code-block {
+      background-color: #462d3d;
+      color: #f8eef4;
+      padding: 20px;
+      border-radius: 12px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 18px 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #773353;
+      color: #ffffff;
+      text-align: center;
+      padding: 26px 15px;
+      margin-top: 40px;
+      font-size: 0.92rem;
+    }
+
+    footer p:first-child {
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    footer p:last-child {
+      opacity: 0.9;
+      font-size: 0.86rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.9rem;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 0.85rem;
+      }
+
+      section.card {
+        padding: 22px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Banner -->
+  <header id="home">
+    <h1>Angela Mae Enriquez</h1>
+    <p class="subtitle">✿ Student | Dreamer | Lifelong Learner ✿</p>
+    <p class="welcome">Welcome to my little corner of the web ♡</p>
+  </header>
+
+  <!-- Sticky Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#personal-info">Personal Information</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#java-code">Java Code</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Personal Information Section -->
+    <section id="personal-info" class="card">
+      <h2>Personal Information</h2>
+      <p>
+        Hello! My name is Angela Mae Enriquez. I am a student who enjoys learning new things and improving my skills. I am interested in technology and programming because they help me become more creative and develop my problem-solving abilities. My goal is to finish my studies, build a successful career, and make my family proud.
+      </p>
+
+      <div class="info-list">
+        <div class="info-box">
+          <span class="label">Full Name</span>
+          <span class="value">Angela Mae Enriquez</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Course</span>
+          <span class="value">Bachelor of Science in Information Technology</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">School</span>
+          <span class="value">Our Lady of Sacred Heart College of Guimba</span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Email</span>
+          <span class="value"><a href="mailto:enriquezangelamae1@gmail.com">enriquezangelamae1@gmail.com</a></span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Contact Number</span>
+          <span class="value"><a href="tel:09930262318">09930262318</a></span>
+        </div>
+
+        <div class="info-box">
+          <span class="label">Address</span>
+          <span class="value">Manggang Marikit, Guimba, Nueva Ecija</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Background Section -->
+    <section id="education" class="card">
+      <h2>Educational Background</h2>
+      <div class="edu-school">Our Lady of Sacred Heart College of Guimba</div>
+      <div class="edu-course">Bachelor of Science in Information Technology (BSIT)</div>
+      <p class="edu-year"><strong>Year Level and School Year:</strong> 1st Year BSIT, 2026–2027</p>
+      <p>
+        I am currently learning the foundations of computing, web development, and computer programming. My studies help me develop technical knowledge and prepare for future opportunities in the field of information technology.
+      </p>
+    </section>
+
+    <!-- Skills and Competencies Section -->
+    <section id="skills" class="card">
+      <h2>Skills and Competencies</h2>
+      <p>Some of the skills I am developing through my studies and activities include:</p>
+
+      <div class="skills-container">
+        <span class="skill-pill">Basic HTML</span>
+        <span class="skill-pill">Basic CSS</span>
+        <span class="skill-pill">Java Programming</span>
+        <span class="skill-pill">Problem-Solving</span>
+        <span class="skill-pill">Logical Thinking</span>
+        <span class="skill-pill">Teamwork</span>
+        <span class="skill-pill">Communication</span>
+        <span class="skill-pill">Willingness to Learn</span>
+      </div>
+
+      <p class="muted-note">Edit this list so it reflects the skills you can confidently discuss.</p>
+    </section>
+
+    <!-- Java Code Section -->
+    <section id="java-code" class="card">
+      <h2>Java Code – Cash Register Transaction Analyzer</h2>
+      <p>
+        This is my Java console program. It accepts 15 positive transaction amounts, calculates the total and average, counts transactions worth at least ₱1,000, finds the smallest amount, and displays the amounts from highest to lowest.
+      </p>
+
+      <pre class="code-block"><code>
+        
+        import java.util.Scanner;
+
+public class CashRegisterTransaction {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double[] amount = new double[15];
+
+        double total = 0;
+        double average;
+        double smallest;
+        int count = 0;
+
+        System.out.println("CASH REGISTER TRANSACTION ANALYZER");
+        System.out.println("----------------------------------");
+
+        for (int i = 0; i < 15; i++) {
+
+            while (true) {
+                System.out.print("Enter transaction " + (i + 1) + ": ");
+
+                if (input.hasNextDouble()) {
+                    amount[i] = input.nextDouble();
+
+                    if (amount[i] > 0) {
+                        break;
+                    } else {
+                        System.out.println("Invalid! Enter an amount greater than zero.");
+                    }
+
+                } else {
+                    System.out.println("Invalid input! Please enter a number.");
+                    input.next();
+                }
+            }
+
+            total += amount[i];
+
+            if (amount[i] >= 1000) {
+                count++;
+            }
+        }
+
+        smallest = amount[0];
+
+        for (int i = 1; i < 15; i++) {
+            if (amount[i] < smallest) {
+                smallest = amount[i];
+            }
+        }
+
+        average = total / 15;
+
+        for (int i = 0; i < 14; i++) {
+            for (int j = 0; j < 14 - i; j++) {
+
+                if (amount[j] < amount[j + 1]) {
+
+                    double temp = amount[j];
+                    amount[j] = amount[j + 1];
+                    amount[j + 1] = temp;
+                }
+            }
+        }
+
+        System.out.println("\n========== RESULTS ==========");
+
+        System.out.printf("Total Amount Collected: P%.2f%n", total);
+        System.out.printf("Average Transaction: P%.2f%n", average);
+        System.out.println("Transactions of P1,000 or more: " + count);
+        System.out.printf("Smallest Transaction: P%.2f%n", smallest);
+
+        System.out.println("\nTransactions in Descending Order:");
+
+        for (int i = 0; i < 15; i++) {
+            System.out.printf("Index %d: P%.2f%n", i, amount[i]);
+        }
+
+        System.out.println("=============================");
+
+        input.close();
+    }
+}
+
+
+        
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>Thank you for visiting my portfolio!</p>
+    <p>© 2026 Angela Mae Enriquez | Personal Portfolio</p>
+  </footer>
+
+</body>
+</html>
